@@ -2,17 +2,17 @@
 
 This project implements a sequential track recommendation model for Spotify, leveraging NLP-based features and advanced deep learning techniques.
 
-Overview
+# Overview
 
 The goal was to develop a model that recommends tracks based on the context of existing playlists. Starting with a dataset of over six million tracks and one million playlists, we downsampled to 10% (~600K tracks) for computational feasibility.
 
-Key Details
+# Key Details
 
 Course: MSBA 503: Analytics Programming II
 
 Dataset: Over six million tracks and one million playlists, downsampled to ~600K tracks for model training and testing.
 
-Data Preprocessing and Feature Engineering
+# Data Preprocessing and Feature Engineering
 
 Normalization: Applied normalization to numerical and text-based columns.
 
@@ -24,7 +24,7 @@ Validation Processing: Ensured the validation data followed the same preprocessi
 
 Model Development
 
-Word2Vec Embeddings
+# Word2Vec Embeddings
 
 Approach: Modeled playlists as "sentences" and tracks as "words."
 
@@ -34,7 +34,7 @@ Optimization: Introduced negative sampling to improve convergence.
 
 Performance: Achieved high binary accuracy (~0.96).
 
-Bert4Rec Model
+# Bert4Rec Model
 
 Input Handling: Created a global track map and introduced padding tokens ([PAD], [UNK]) for sequence alignment.
 
@@ -44,7 +44,7 @@ Feature Aggregation: Combined track embeddings with auxiliary features into an a
 
 Regularization: Applied dropout layers and masked language modeling (MLM) for sequence prediction.
 
-Optimization:
+# Optimization:
 
 Gradient clipping and logit clamping to stabilize training.
 
@@ -52,7 +52,7 @@ Learning rate scheduler for optimized convergence.
 
 Achieved a final training loss of 0.0004.
 
-Challenges
+# Challenges
 
 Memory Limitations: Constrained by computational resources during model optimization.
 
@@ -60,7 +60,7 @@ Exploding Gradients: Debugged and resolved issues related to unstable training d
 
 Shape Misalignment: Addressed issues with tensor alignment during embedding and model integration.
 
-Performance Insights
+# Performance Insights
 
 Strengths: Strong performance on short playlists.
 
@@ -68,7 +68,7 @@ Weaknesses: Weaker results on long playlists.
 
 Metrics: Achieved decent Normalized Discounted Cumulative Gain (NDCG) but underperformed on R-Precision.
 
-Future Improvements
+# Future Improvements
 
 Cold-Start Problem: Develop logic to handle recommendations for new users and tracks.
 
